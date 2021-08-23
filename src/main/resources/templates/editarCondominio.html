@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="Content-Type" content="text/html"></meta>
+    <title>Atletas</title>
+</head>
+<body>
+<h1>Los siguientes datos son los que se pueden editar de un condominio:</h1>
+<form action="#" th:action="@{/editarCondominio/{id}(id= ${id})}" th:object="${condominio}" method="post">
+
+    <table>
+        <tr>
+            <td><label for="nombre">Nombre</label></td>
+            <td><input type="text" th:field="*{nombre}" id="nombre"></td>
+        </tr>
+
+        <tr>
+            <td><label for="direccion">Direccion</label></td>
+            <td><input type="text" th:field="*{direccion}" id="direccion"></td>
+        </tr>
+
+        <tr>
+            <td><label for="representante">representante</label></td>
+            <td><input type="text" th:field="*{representante}" id="representante"></td>
+        </tr>
+
+        <tr>
+            <td><label for="cantidadUnidades">Cantidad Unidades</label></td>
+            <td><input type="text" th:field="*{cantidadUnidades}" id="cantidadUnidades"></td>
+        </tr>
+
+        <tr>
+            <td><label for="cedulaJuritica">Cedula Juritica</label></td>
+            <td><input type="text" th:field="*{cedulaJuritica}" id="cedulaJuritica"></td>
+        </tr>
+
+        <input type="submit" value="Guardar cambios">
+    </table>
+    <br>
+    <a th:href="@{/verCondominio/{id}(id= *{id})}">Volver al detalle del condominio</a>
+    <br>
+</form>
+
+<a href="/">Ir a casa</a>
+</body>
+</html>

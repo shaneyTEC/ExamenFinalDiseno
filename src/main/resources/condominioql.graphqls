@@ -1,35 +1,60 @@
+type Amenidad {
+    id: ID!,
+    descripcion: String
+}
+
+type CuotaCondominal {
+    id: ID!,
+    monto: String
+}
+
 type Condominio {
     id: ID!,
     nombre: String,
     direccion: String,
+    cedulaJuritica: Float,
     representante: String,
+    cantidadUnidades: Float,
     estado: String,
-    cedulaJuritica: Int,
-    cantidadUnidades: Int,
-    cuotaCondominal : Int
+    amenidad: [Amenidad],
+    cuotaCondominal : [CuotaCondominal]
 }
 
 type Query {
-    condominio(count: Int): [Condominio],
+    condominios: [Condominio],
     condominio(id: ID): Condominio
+
+    amenidades: [Amenidad],
+    amenidad(id: ID): Amenidad
+
+    cuotaCondominales: [CuotaCondominal],
+    cuotaCondominal(id: ID): CuotaCondominal
 }
 
 type Mutation {
     createCondominio(
         nombre: String,
         direccion: String,
+        cedulaJuritica: Float,
         representante: String,
-        estado: String,
-        cedulaJuritica: Int,
-        cantidadUnidades: Int,
-        cuotaCondominal : Int): Condominio
+        cantidadUnidades: Float,
+        amenidades: String,
+        cuotaCondominal : Float): Condominio
 
     updateCondominio(
+        id: Float,
         nombre: String,
         direccion: String,
         representante: String,
-        cedulaJuritica: Int,
-        cantidadUnidades: Int): Condominio
+        amenidades: String,
+        cedulaJuritica: Float,
+        cantidadUnidades: Float,
+        cuotaCondominal : Float): Condominio
 
-    updateCondominioEstado(id: ID): Condominio
+    updateAmenidades(
+        id: Float,
+        amenidades: String): Condominio
+
+    updateCondominioEstado(
+        id: Float): Condominio
 }

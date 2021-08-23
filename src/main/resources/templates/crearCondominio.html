@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="Content-Type" content="text/html"></meta>
+    <title>Nuevo condominio</title>
+</head>
+<body>
+Insertar un nuevo condominio:
+<form action="#" th:action="@{/insertar}" th:object="${condominio}" method="post">
+    <table>
+        <tr>
+            <td><label for="name">Nombre</label></td>
+            <td><input type="text" th:field="*{nombre}" id="name"></td>
+        </tr>
+
+        <tr>
+            <td><label for="direccion">Direccion</label></td>
+            <td><input type="text" th:field="*{direccion}" id="direccion"></td>
+        </tr>
+
+        <tr>
+            <td><label for="representante">representante</label></td>
+            <td><input type="text" th:field="*{representante}" id="representante"></td>
+        </tr>
+
+        <tr>
+           <td><label for="cantidadUnidades">cantidadUnidades</label></td>
+            <td><input type="date" th:field="*{cantidadUnidades}" id="cantidadUnidades"></td>
+        </tr>
+
+        <tr>
+            <td><label for="cedulaJuritica">cedulaJuritica</label></td>
+            <td><input type="text" th:field="*{cedulaJuritica}" id="cedulaJuritica"></td>
+        </tr>
+        <tr>
+            <td><label for="rama">estado</label></td>
+            <td>
+                <select th:field="*{estado}" id="rama">
+                    <option th:value="'True'" th:text="Activo"></option>
+                    <option th:value="'False'" th:text="Inactivo"></option>
+                </select>
+            </td>
+        </tr>
+    </table>
+
+    <input type="submit" value="Agregar Atleta">
+</form>
+
+<a href="/">Ir a casa</a>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Cuotas Condominales.</title>
+</head>
+<body>
+<div>
+    <h1>Lista de Cuotas del Condominales</h1>
+    <ul>
+        <table>
+            <tr>
+                <th><b>Monto</b></th>
+                <th><b>Condominio</b></th>
+            </tr>
+            <tr th:each="entry : ${cuotaCondominal}">
+                <td th:text="${entry.monto}"></td>
+                <td th:text="${entry.condominio.nombre}"></td>
+            </tr>
+        </table>
+    </ul>
+</div>
+<a href="/">Ir a casa</a>
+</body>
+</html>

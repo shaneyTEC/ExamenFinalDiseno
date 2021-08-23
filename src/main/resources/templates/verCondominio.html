@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h1>Detalle del condominio</h1>
+    <ul>
+        <div th:object="${condominio}">
+            <li>
+                <h4>Persona</h4>
+                    <p>Nombre: <span th:text="${condominio.nombre}"></span></p>
+                    <p>Direccion: <span th:text="${condominio.direccion}"></span></p>
+                    <p>Representante: <span th:text="${condominio.representante}"></span></p>
+                    <p>Cantidad de Unidades: <span th:text="${condominio.cantidadUnidades}"></span></p>
+                    <p>Cedula: <span th:text="${condominio.cedulaJuritica}"></span></p>
+                    <p>Estado: <span th:text="${condominio.estado}"></span></p>
+            </li>
+            <a th:href="@{/editarCondominio/{id}(id= ${condominio.id})}">Editar Condominio</a>
+        </div>
+    </ul>
+</div>
+<a href="/">Ir a casa</a>
+</body>
+</html>

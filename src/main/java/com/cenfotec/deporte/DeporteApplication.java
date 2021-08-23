@@ -1,13 +1,13 @@
-package com.examenfinal.sucondofeliz;
+package com.cenfotec.deporte;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SuCondoFelizApplication {
+public class DeporteApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SuCondoFelizApplication.class, args);
+        SpringApplication.run(DeporteApplication.class, args);
     }
 
 }

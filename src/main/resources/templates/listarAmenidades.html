@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Amenidades.</title>
+</head>
+<body>
+<div>
+    <h1>Lista de Amenidades</h1>
+    <ul>
+        <table>
+            <tr>
+                <th><b>Detalle</b></th>
+                <th><b>Condominio</b></th>
+            </tr>
+            <tr th:each="entry : ${amenidades}">
+                <td th:text="${entry.detalle}"></td>
+                <td th:text="${entry.condominio.nombre}"></td>
+            </tr>
+        </table>
+    </ul>
+</div>
+<a href="/">Ir a casa</a>
+</body>
+</html>
